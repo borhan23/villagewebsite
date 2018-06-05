@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Hedi-Aydınlar Köyü</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
+    <script type="text/javascript">
+        var image1 = new Image()
+        image1.src = "image/1.jpg"
+        var image2 = new Image()
+        image2.src = "image/2.jpg"
+        var image3 = new Image()
+        image3.src = "image/3.jpg"
+        var image4 = new Image()
+        image4.src = "image/4.jpg"
+        var image5 = new Image()
+        image5.src = "image/5.jpg"
+        var image6 = new Image()
+        image6.src = "image/6.jpg"
+        var image7 = new Image()
+        image7.src = "image/7.jpg"
+        var image8 = new Image()
+        image8.src = "image/8.jpg"
+        var image9 = new Image()
+        image9.src = "image/9.jpg"
+        var image10 = new Image()
+        image10.src = "image/10.jpg"
+        var image11 = new Image()
+        image11.src = "image/11.jpg"
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <header class="slayt">
+            <img alt="" class="slayt" name="img" style="height:375px;width:100%;" />
+            <script>
+                var step = 1
+                function slideImages() {
+                    if(!document.images)
+                        return
+                    document.images.img.src = eval("image" + step + ".src")
+                    if(step<11)
+                        step++
+                    else
+                        step = 1
+                    setTimeout("slideImages()",4000)
+                }
+                slideImages()
+            </script>
+            
+        </header>
+        
+            <ul class="menu">
+                <li style="font-size:18px;"><a href="Anasayfa.aspx"><b>Ana Sayfa</b></a></li>
+                <li style="font-size:18px;"><a href="Tarihce.aspx"><b>Tarihçe</b></a></li>
+                <li style="font-size:18px;"><a href="sonbahar.aspx"><b>Fotoğraflar</b></a></li>                   
+                <li style="font-size:18px;"><a href="Video.aspx"><b>Videolar</b></a></li>
+                <li style="font-size:18px;"><a href="http://www.aydinlarkoyu.org.tr/" target="_blank"><b>Köy Vakfı</b></a></li>
+                <li style="font-size:18px;"><a href="iletisim.aspx"><b>İletişim</b></a></li>
+                <li><a href="https://www.facebook.com/groups/48650785744/?fref=ts" target="_blank"><asp:Image runat="server" src="image/facebook.png" Height="40px"  Width="40px" /></a></li>
+                <li><a href="duyuru.aspx"><asp:Image runat="server" src="image/Announcement-icon.png" Height="35px"  Width="35px" /></a></li>
+            </ul>
+        
+       
+    </div>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+           
+          
+           
+        </asp:ContentPlaceHolder>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Resimler %>" SelectCommand="SELECT * FROM [resimler]"></asp:SqlDataSource>
+
+    </form>
+</body>
+</html>

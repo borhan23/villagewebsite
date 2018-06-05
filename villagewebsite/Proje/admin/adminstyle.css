@@ -1,0 +1,29 @@
+﻿body {
+    background:url('/image/arka plan.jpg');
+}
+.ana{
+    background-color:rgba(133, 100, 49, 0.30);
+    width:500px;
+    height:450px;
+    margin:0 auto;
+    border:2px solid black;
+    border-radius:5px;
+    
+}
+.grid{
+    overflow:auto;
+    height: 322px;
+    width:338px;
+    z-index: 1;
+   
+    
+}
+.anayolyukle{
+    background-color:rgba(133, 100, 49, 0.30);
+    width:600px;
+    height:450px;
+    margin:0 auto;
+    border:2px solid black;
+    border-radius:5px;
+    
+}
